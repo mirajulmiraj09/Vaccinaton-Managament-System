@@ -23,34 +23,34 @@ class UserRoleAdmin(admin.ModelAdmin):
     list_filter = ('role',)
 
 
-# @admin.register(Profile)
-# class ProfileAdmin(admin.ModelAdmin):
-#     list_display = ('user', 'first_name', 'last_name', 'nid', 'phone')
-#     search_fields = ('first_name', 'last_name', 'nid', 'phone')
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = (
-        'user_id',
-        'user_email',
-        'first_name',
-        'last_name',
-        'nid',
-        'phone'
-    )
-    search_fields = (
-        'user__id',
-        'user__email',
-        'first_name',
-        'last_name',
-        'nid',
-        'phone'
-    )
+    list_display = ('user', 'first_name', 'last_name', 'nid', 'phone')
+    search_fields = ('first_name', 'last_name', 'nid', 'phone')
+# @admin.register(Profile)
+# class ProfileAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'user_id',
+#         'user_email',
+#         'first_name',
+#         'last_name',
+#         'nid',
+#         'phone'
+#     )
+#     search_fields = (
+#         'user__id',
+#         'user__email',
+#         'first_name',
+#         'last_name',
+#         'nid',
+#         'phone'
+#     )
 
-    def user_id(self, obj):
-        return obj.user.id
+#     def user_id(self, obj):
+#         return obj.user.id
 
-    def user_email(self, obj):
-        return obj.user.email
+#     def user_email(self, obj):
+#         return obj.user.email
 
-    user_id.short_description = 'User ID'
-    user_email.short_description = 'Email'
+#     user_id.short_description = 'User ID'
+#     user_email.short_description = 'Email'
